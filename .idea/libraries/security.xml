@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="security">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/security/local_policy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/security/US_export_policy.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MovieRightNow2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

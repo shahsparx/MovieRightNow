@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_movierightnow" default="compile.module.movierightnow">
+  <dirname property="module.movierightnow.basedir" file="${ant.file.module_movierightnow}"/>
+  
+  <property name="module.jdk.home.movierightnow" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.movierightnow" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.movierightnow" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.movierightnow" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="movierightnow.output.dir" value="${module.movierightnow.basedir}/out/production/MovieRightNow"/>
+  <property name="movierightnow.testoutput.dir" value="${module.movierightnow.basedir}/out/test/MovieRightNow"/>
+  
+  <path id="movierightnow.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="movierightnow.module.production.classpath">
+    <path refid="${module.jdk.classpath.movierightnow}"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+    <path refid="library.ext.classpath"/>
+  </path>
+  
+  <path id="movierightnow.runtime.production.module.classpath">
+    <pathelement location="${movierightnow.output.dir}"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+    <path refid="library.ext.classpath"/>
+  </path>
+  
+  <path id="movierightnow.module.classpath">
+    <path refid="${module.jdk.classpath.movierightnow}"/>
+    <pathelement location="${movierightnow.output.dir}"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+    <path refid="library.ext.classpath"/>
+  </path>
+  
+  <path id="movierightnow.runtime.module.classpath">
+    <pathelement location="${movierightnow.testoutput.dir}"/>
+    <pathelement location="${movierightnow.output.dir}"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+    <path refid="library.ext.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.movierightnow">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.movierightnow">
+    <patternset refid="excluded.from.module.movierightnow"/>
+  </patternset>
+  
+  <path id="movierightnow.module.sourcepath">
+    <dirset dir="${module.movierightnow.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.movierightnow" depends="compile.module.movierightnow.production,compile.module.movierightnow.tests" description="Compile module MovieRightNow"/>
+  
+  <target name="compile.module.movierightnow.production" depends="register.custom.compilers" description="Compile module MovieRightNow; production classes">
+    <mkdir dir="${movierightnow.output.dir}"/>
+    <javac2 destdir="${movierightnow.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.movierightnow}/javac">
+      <compilerarg line="${compiler.args.movierightnow}"/>
+      <bootclasspath refid="movierightnow.module.bootclasspath"/>
+      <classpath refid="movierightnow.module.production.classpath"/>
+      <src refid="movierightnow.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.movierightnow"/>
+    </javac2>
+    
+    <copy todir="${movierightnow.output.dir}">
+      <fileset dir="${module.movierightnow.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.movierightnow.tests" depends="register.custom.compilers,compile.module.movierightnow.production" description="compile module MovieRightNow; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.movierightnow" description="cleanup module">
+    <delete dir="${movierightnow.output.dir}"/>
+    <delete dir="${movierightnow.testoutput.dir}"/>
+  </target>
+</project>

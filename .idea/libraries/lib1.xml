@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/javaws.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/plugin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/jce.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/jfr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/jfxswt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/deploy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/resources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/management-agent.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/charsets.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/bundles/MovieRightNow/runtime/lib/jsse.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
