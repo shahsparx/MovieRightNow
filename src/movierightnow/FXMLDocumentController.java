@@ -58,6 +58,8 @@ import org.json.simple.parser.ParseException;
  */
 public class FXMLDocumentController implements Initializable {
     
+    String OMDB_API_KEY="";
+    
     ObservableList<MRN> list = FXCollections.observableArrayList();
     ObservableList<MRN> list2 = FXCollections.observableArrayList();
     private Label label;
@@ -255,7 +257,7 @@ public class FXMLDocumentController implements Initializable {
             {
                 String mnx = m;
                 String encodedmn = URLEncoder.encode(m);
-                String link = "http://www.omdbapi.com/?apikey=df81037&t="+encodedmn;
+                String link = "http://www.omdbapi.com/?apikey="+OMDB_API_KEY+"&t="+encodedmn;
                 System.out.println(link);
                 JSONObject json = readJsonFromUrl(link);
                 if(json.containsKey("Error"))
@@ -368,7 +370,7 @@ public class FXMLDocumentController implements Initializable {
             String mnx = mnmanfield.getText();
             String encmnx = URLEncoder.encode(mnx);
             String yx = URLEncoder.encode(ymanfield.getText());
-            String linkman = "http://www.omdbapi.com/?apikey=df81037&t="+encmnx+"&y="+yx;
+            String linkman = "http://www.omdbapi.com/?apikey="+OMDB_API_KEY+"&t="+encmnx+"&y="+yx;
             JSONObject json = readJsonFromUrl(linkman);
             if(json.containsKey("Error"))
                 {
