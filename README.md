@@ -11,3 +11,9 @@ http://www.omdbapi.com/
 
 Become a patron here  : https://www.patreon.com/bePatron?u=5038490
 Request for a key here after becoming a patron   : http://www.omdbapi.com/apikey.aspx
+
+![alt text](Application_screenshots/MovieRightNow_mainScreen.png "Application Launch")
+![alt text](Application_screenshots/MovieRightNow_Enter_location.png "Enter the location of your movie directory")
+![alt text](Application_screenshots/MovieRightNow_Response.png "JavaFX tableview displaying results")
+![alt text](Application_screenshots/MovieRightNow_manualEntry.png "Manual Entry option")
+![alt text](Application_screenshots/MovieRightNow_Enter_input.png "Enter the input values")
